@@ -1,0 +1,25 @@
+.App {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+.nav-link:hover .hover-line {
+    width: 100%;
+  }
+
+
