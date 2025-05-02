@@ -1,25 +1,68 @@
 .App {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  background-color: black;
+  min-height: 100vh; /* Mantém a altura mínima */
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Permite rolagem se o conteúdo exceder a altura */
+}
 
-  .header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
+.header {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 80px; /* Define a altura fixa da imagem */
+  width: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem se ajuste ao contêiner */
+  display: block; /* Remove possíveis espaçamentos extras */
+}
+
+.nav-links {
+  position: relative; /* Alterado de absolute para relative */
+  margin: 20px auto; /* Centraliza os links com margem */
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+}
+
+.hover-line {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
 
 .nav-link:hover .hover-line {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-
+.letra-chat {
+  color: white;
+  background-color: aqua;
+  padding: 20px;
+  text-align: center;
+}
