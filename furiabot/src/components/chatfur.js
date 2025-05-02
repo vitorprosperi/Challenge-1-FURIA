@@ -7,9 +7,10 @@ function Chatfur() {
   const [matches, setMatches] = useState([]); // Estado para armazenar as partidas
   const [showNews, setShowNews] = useState(false); // Estado para controlar a exibição das notícias
   const [showMatches, setShowMatches] = useState(false); // Estado para controlar a exibição das partidas
+  const [showWhatsApp, setShowWhatsApp] = useState(false); // Estado para controlar a exibição da mensagem do WhatsApp
 
   useEffect(() => {
-    // Faz a requisição para a API
+    // Faz a requisição inicial para a API
     fetch('http://localhost:3001/api/furia')
       .then((response) => response.json())
       .then((data) => {
@@ -20,6 +21,28 @@ function Chatfur() {
         console.error('Erro ao buscar dados da API:', error);
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    // Conecta ao servidor para atualizações em tempo real
+    const eventSource = new EventSource('http://localhost:3001/api/furia/updates');
+
+    eventSource.onmessage = (event) => {
+      const updatedNews = JSON.parse(event.data);
+      setTeamData((prevData) => ({
+        ...prevData,
+        recentNews: updatedNews, // Atualiza as notícias no estado
+      }));
+    };
+
+    eventSource.onerror = () => {
+      console.error('Erro na conexão com o servidor de atualizações.');
+      eventSource.close(); // Fecha a conexão em caso de erro
+    };
+
+    return () => {
+      eventSource.close(); // Fecha a conexão ao desmontar o componente
+    };
   }, []);
 
   const fetchMatches = () => {
@@ -52,6 +75,10 @@ function Chatfur() {
     setShowNews(!showNews); // Alterna o estado de exibição das notícias
   };
 
+  const handleShowWhatsApp = () => {
+    setShowWhatsApp(!showWhatsApp); // Alterna o estado de exibição da mensagem do WhatsApp
+  };
+
   return (
     <div className="chatfur-container">
       <div className="chatfur-header">Chat FURIOSO</div>
@@ -69,16 +96,17 @@ function Chatfur() {
                 <ul className="chatfur-news-list">
                   {teamData.recentNews.map((news, index) => (
                     <li key={index} className="chatfur-news-item">
-                     <a
-                      href={`https://www.hltv.org${news.link}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {news.name}
-                    </a>
-                </li>
-            ))}
-              </ul>
+                      <a
+                        href={`https://www.hltv.org${news.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {news.name}
+                      </a>
+                      {news.description && <p>{news.description}</p>}
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
             <button className="chat-option-button" onClick={fetchMatches}>
@@ -99,8 +127,39 @@ function Chatfur() {
                     ))}
                   </ul>
                 ) : (
-                  <p>Nenhuma partida encontrada.</p>
+                  <div>
+                    <p>Nenhuma partida encontrada.</p>
+                    <p>
+                      Se preferir visite: {' '}
+                      <a
+                        href="https://www.hltv.org/team/8297/furia#tab-matchesBox"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        HLTV
+                      </a>.
+                    </p>
+                  </div>
                 )}
+              </div>
+            )}
+            {/* Botão adicional */}
+            <button
+              className="chat-option-button"
+              onClick={handleShowWhatsApp}
+            >
+              Quer conversar mais com a gente?
+            </button>
+            {showWhatsApp && (
+              <div className="whatsapp-message">
+                <p>Venha ser um torcedor FURIOSO!</p>
+                <a
+                  href="https://wa.me/5511993404466"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Clique aqui para conversar no WhatsApp
+                </a>
               </div>
             )}
           </div>

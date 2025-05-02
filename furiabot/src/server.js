@@ -79,6 +79,33 @@ app.get('/api/furia/matches', async (req, res) => {
     }
   });
 
+// Nova rota para enviar atualizações em tempo real sobre notícias da FURIA
+app.get('/api/furia/updates', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+
+  const interval = setInterval(async () => {
+    try {
+      const data = await HLTV.getTeam({ id: 8297 });
+      const recentNews = data.news
+        ? data.news.filter((news) => 
+            news.name.toLowerCase().includes('furia') || 
+            (news.description && news.description.toLowerCase().includes('furia'))
+          ).slice(0, 10)
+        : [];
+      res.write(`data: ${JSON.stringify(recentNews)}\n\n`);
+    } catch (error) {
+      console.error('Erro ao buscar notícias:', error);
+    }
+  }, 60000); // Atualiza a cada 60 segundos
+
+  req.on('close', () => {
+    clearInterval(interval);
+    res.end();
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor HLTV rodando em http://localhost:${PORT}`);
 });

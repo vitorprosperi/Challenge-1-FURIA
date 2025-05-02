@@ -14,12 +14,21 @@ function App() {
 
         {/* Links centralizados */}
         <div className="nav-links">
-          <a href="#quem-somos" className="nav-link">
-            Quem Somos Nós
+          <a 
+            href="https://github.com/vitorprosperi" 
+            className="nav-link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            AUTOR
             <div className="hover-line"></div>
           </a>
-          <a href="#produtos" className="nav-link">
-            Produtos
+          <a 
+            href="https://www.furia.gg/" 
+            className="nav-link" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            PRODUTOS 
             <div className="hover-line"></div>
           </a>
           <a href="#contato" className="nav-link">
