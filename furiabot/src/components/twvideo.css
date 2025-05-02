@@ -1,0 +1,17 @@
+.twitch-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Faz o contêiner ocupar toda a altura da tela */
+    width: 100%; /* Faz o contêiner ocupar toda a largura */
+    background-color: black; /* Fundo opcional para destacar o player */
+  }
+  
+  .twitch-box {
+    max-width: 800px; /* Define uma largura máxima para o player */
+    width: 100%; /* Faz o player ser responsivo */
+    padding: 20px;
+    background-color: #1f1f1f; /* Fundo do contêiner do player */
+    border-radius: 16px; /* Bordas arredondadas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra opcional */
+  }

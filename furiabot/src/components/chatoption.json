@@ -1,9 +1,0 @@
-{
-    "welcomeMessage": "Olá! Como posso ajudar você?",
-    "options": [
-      {
-        "id": 1,
-        "text": "Infelizmente estamos com um problema técnico e não conseguimos atender você no momento. Por favor, tente novamente mais tarde."
-      }
-    ]
-  }

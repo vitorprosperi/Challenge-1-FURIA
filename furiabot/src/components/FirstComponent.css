@@ -1,39 +1,32 @@
-.App {
-  background-color: black;
-  min-height: 100vh; /* Mantém a altura mínima */
-  display: flex;
-  flex-direction: column;
-  overflow: auto; /* Permite rolagem se o conteúdo exceder a altura */
-}
-
 .header {
-  position: relative;
-  height: 80px;
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+  height: 80px;
+  background-color: black; /* Cor de fundo */
 }
 
 .logo-container {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  height: 80px;
+  position: absolute; /* Posiciona no canto superior esquerdo */
+  top: 10px; /* Define a distância do topo */
+  left: 10px; /* Define a distância da esquerda */
+  height: 60px; /* Define a altura do contêiner */
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 80px; /* Define a altura fixa da imagem */
-  width: auto; /* Mantém a proporção da imagem */
-  object-fit: contain; /* Garante que a imagem se ajuste ao contêiner */
-  display: block; /* Remove possíveis espaçamentos extras */
+  max-height: 100%; /* A logo ocupará toda a altura do contêiner */
+  width: auto; /* Mantém a proporção da largura */
+  object-fit: contain; /* Garante que a imagem não seja distorcida */
 }
 
 .nav-links {
-  position: relative; /* Alterado de absolute para relative */
-  margin: 20px auto; /* Centraliza os links com margem */
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta o ponto de referência para o centro */
   display: flex;
   align-items: center;
   gap: 40px;
@@ -60,9 +53,7 @@
   width: 100%;
 }
 
-.letra-chat {
-  color: white;
-  background-color: aqua;
-  padding: 20px;
-  text-align: center;
+.letra-chat{
+  color:white;
+  background-color:aqua
 }
