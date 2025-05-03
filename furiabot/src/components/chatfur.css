@@ -23,7 +23,7 @@
     bottom: 80px;
     right: 20px;
     width: 300px;
-    height: 400px;
+    height: 350px;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -65,37 +65,62 @@
 
   /* Estilo para a lista de notícias */
 .chatfur-news-list {
-  list-style-type: none; /* Remove os marcadores da lista */
-  padding: 0; /* Remove o espaçamento interno */
-  margin: 0; /* Remove o espaçamento externo */
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
 }
 
 /* Estilo para cada item da lista de notícias */
 .chatfur-news-item {
-  font-family: 'Arial', sans-serif; /* Define a fonte */
-  font-size: 16px; /* Define o tamanho da fonte */
-  text-align: left; /* Alinha o texto à esquerda */
-  margin-bottom: 15px; /* Adiciona espaço entre os itens */
-  line-height: 1.5; /* Aumenta o espaçamento entre as linhas */
+  font-family: 'Arial', sans-serif; 
+  font-size: 16px; 
+  text-align: left; 
+  margin-bottom: 15px; 
+  line-height: 1.5; 
 }
 
 /* Estilo para os links das notícias */
 .chatfur-news-item a {
-  color: black; /* Define a cor do texto como preto */
-  font-weight: bold; /* Deixa o texto em negrito (opcional) */
-  text-decoration: none; /* Remove o sublinhado do link */
+  color: black; 
+  font-weight: bold; 
+  text-decoration: none; 
 }
 
 .chatfur-news-item a:hover {
   text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
-.whatsapp-message a {
-  color: black; /* Define a cor do texto como preto */
-  font-weight: bold; /* Deixa o texto em negrito (opcional) */
-  text-decoration: none; /* Remove o sublinhado do link */
+.hltv-link {
+  color: black; 
+  font-weight: bold; 
+  text-decoration: none;
 }
 
-.whatsapp-message a:hover {
+.hltv-link:hover{
+  text-decoration: underline;
+}
+.zap a {
+  color: black; 
+  font-weight: bold; 
+  text-decoration: none; 
+}
+
+.zap a:hover {
   text-decoration: underline; /* Adiciona sublinhado ao passar o mouse (opcional) */
+}
+
+.panther-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.panther-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }

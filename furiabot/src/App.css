@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Remove a barra de rolagem */
+  height: 100vh; /* Garante que o conteúdo ocupe exatamente a altura da janela */
+}
+
+html {
+  height: 100%; /* Garante que o HTML ocupe toda a altura da janela */
+}
+
 .header {
   position: relative;
   height: 80px;

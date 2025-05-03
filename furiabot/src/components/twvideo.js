@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './twvideo.css'; // Importa o CSS para estilização
+import './twvideo.css'; 
 
 function TwitchPlayer() {
   useEffect(() => {
@@ -16,7 +16,7 @@ function TwitchPlayer() {
       new window.Twitch.Embed('twitch-embed', {
         width: '100%',
         height: 480,
-        channel: 'gaules', // Substitua pelo canal desejado
+        channel: 'furiatv', // Escolher o canal
         layout: 'video',
         autoplay: true,
       });

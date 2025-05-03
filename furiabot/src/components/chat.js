@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import mensagens from './message.json'; // ajuste o caminho conforme a estrutura do seu projeto
+import mensagens from './message.json'; 
 import './chat.css';
 
 const nomes = ['FURIOSO', 'Pantera', 'Viton', 'Vprosperi', 'Admir', 'Adir', 'Gui', 'Gi', 'Rodrigo', 'Mari', 'Squick', 'Fallen', 'Yuurih', 'Kscerato', 'Yekindar', 'Molodoy'];
@@ -22,10 +22,10 @@ function CustomChat() {
       } else {
         clearInterval(interval); // Para o intervalo quando todas as mensagens forem exibidas
       }
-    }, 4000); // Adiciona uma mensagem a cada 4 segundos
+    }, 5000); // Adiciona uma mensagem a cada 5 segundos
 
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
-  }, []); // Nenhuma dependência necessária
+  }, []); 
 
   const handleSend = () => {
     if (!input.trim()) return; // Não envia mensagens vazias

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './chatfur.css';
+import loguinho from '../loguinho.png'; // Importa a imagem da pantera
 
 function Chatfur() {
   const [loading, setLoading] = useState(true);
@@ -132,6 +133,7 @@ function Chatfur() {
                     <p>
                       Se preferir visite: {' '}
                       <a
+                        className='hltv-link'
                         href="https://www.hltv.org/team/8297/furia#tab-matchesBox"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -151,17 +153,22 @@ function Chatfur() {
               Quer conversar mais com a gente?
             </button>
             {showWhatsApp && (
-              <div className="whatsapp-message">
+              <div className="zap">
                 <p>Venha ser um torcedor FURIOSO!</p>
                 <a
                   href="https://wa.me/5511993404466"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Clique aqui para conversar no WhatsApp
+                  Clique aqui e nos chame no WhatsApp!
                 </a>
               </div>
             )}
+            {/* Adicionando a pantera e a mensagem */}
+            <div className="panther-message">
+              <img src={loguinho} alt="Pantera" className="panther-icon" />
+              <p>Escolha uma das opções acima e GO FURIA!</p>
+            </div>
           </div>
         ) : (
           <p>Erro ao carregar os dados.</p>

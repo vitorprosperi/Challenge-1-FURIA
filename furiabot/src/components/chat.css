@@ -35,3 +35,75 @@
     border-radius: 4px;
     cursor: pointer;
   }
+
+  .individual-chat-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    z-index: 1000;
+    padding: 20px;
+    height: 500px; /* Altura total do modal */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+  }
+  
+  .individual-chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .individual-chat-body {
+    flex: 1; /* Faz a área de mensagens ocupar o espaço disponível */
+    max-height: 300px; /* Limita a altura máxima */
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  .individual-chat-input {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Move o campo de entrada para o final */
+  }
+  
+  .individual-chat-input input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .individual-chat-input button {
+    padding: 5px 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .individual-chat-input button:hover {
+    background-color: #0056b3;
+  }
+
+  .clickable-name {
+    color: white; /* Cor padrão do texto */
+    cursor: pointer; /* Mostra que o elemento é clicável */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: text-shadow 0.3s ease; /* Suaviza a transição do efeito */
+  }
+  
+  .clickable-name:hover {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), /* Brilho ao redor */
+                 0 0 10px rgba(255, 255, 255, 0.6); /* Brilho mais suave */
+  }
