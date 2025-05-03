@@ -31,8 +31,12 @@ function App() {
             PRODUTOS 
             <div className="hover-line"></div>
           </a>
-          <a href="#contato" className="nav-link">
-            Contato
+          <a 
+            href="https://www.linkedin.com/in/vitor-soares-prosperi-402a9b246/" 
+            className="nav-link" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            CONTATO
             <div className="hover-line"></div>
           </a>
         </div>
